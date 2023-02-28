@@ -1,10 +1,19 @@
-import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle } from "@ionic/react";
-import { useState } from "react";
+import { IonCard, IonCardContent, IonCardHeader } from "@ionic/react";
+import { useHistory } from "react-router-dom";
 
 const Card = (props) => {
-    
+  //history
+  const history = useHistory();
+
+  const muscleGroup = props.day.day.replace(" ", "-");
+
+  //handlers
+  const redirectHandler = () => {
+    history.push(`/${muscleGroup}`);
+  };
+
   return (
-    <IonCard>
+    <IonCard onClick={redirectHandler}>
       <IonCardHeader>{props.day.day}</IonCardHeader>
       {props.day.currentDay && <IonCardContent>Today</IonCardContent>}
     </IonCard>
