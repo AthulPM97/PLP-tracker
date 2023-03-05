@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import PushDay from "./pages/PushDay";
 import LegDay from "./pages/LegDay";
 import PullDay from "./pages/PullDay";
+import Sketch from "./pages/Sketch";
 
 setupIonicReact();
 
@@ -31,6 +32,9 @@ function App() {
         </Route>
         <Route path='/pull-day'>
           <PullDay/>
+        </Route>
+        <Route path='/draw'>
+          <Sketch/>
         </Route>
       </Switch>
     </div>
